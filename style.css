@@ -1,0 +1,134 @@
+:root {
+  --main-bg-color: #101114;
+  --main-text-color: #f9f9f9;
+  --primary-color: #1c1020;
+  --secondary-color: #4a4d57;
+  --accent-color: #00ffc4;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16pt;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  color: var(--main-text-color);
+  
+}
+
+body {
+min-height: 100vh;
+background-color: var(--main-bg-color);
+display: flex;
+flex-direction: column;
+padding: 10px;
+align-items: center;
+ 
+}
+
+h1{
+  font-size: 3rem;
+  margin-top: 100px ;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--accent-color);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  max-width: 100%;
+  gap: 10px;
+}
+#task-input{
+  width: 100%;
+  padding: 12px 20px;
+  font: inherit;
+  border: 2px solid var(--secondary-color);
+  border-radius: 1000px;
+  background: none;
+  color: var(--main-text-color);
+  box-sizing: border-box;
+  caret-color: var(--accent-color);
+}
+/* on focus
+ */
+#task-input:focus {
+  outline: none;
+}
+form {
+
+  position: relative;
+}
+
+#add-button{
+  padding: 0 30px;
+  font: inherit;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  border-radius: 1000px;
+  background-color: var(--accent-color);
+  color: var(--main-bg-color);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  position: absolute;
+  font-weight: 600;
+  top: 0;
+  right: 0;
+}
+.task{
+  display: flex;
+  
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 0 16px;
+
+}
+.task .task-text{
+  
+  padding: 15px;
+  padding-right: 0;
+  flex-grow: 1;
+}
+
+.delete-button{
+  padding: 3px;
+  background:none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.delete-button:hover svg{
+  fill: red;
+  
+}
+
+.custom-checkbox{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+  min-width: 20px;
+  min-height: 20px;
+  
+  
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
+  background-color: var(--accent-color);
+  
+}
