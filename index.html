@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo App</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- import js file  -->
-    <script src="script.js" defer></script>
-    <!-- import font awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8b+z4+2e5c7e5a5e5c7e5a5e5c7e5a5e5c7" crossorigin="anonymous" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Schedule Controller</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>To Do App</h1>
-    <div class="wrapper">
-        <!-- form -->
-        <form action=""  method="post">
-            <input type="text" name="task" id="task-input" placeholder="Enter your task" autocomplete="off">
-            <button type="submit" id="add-button">Add Task</button>
-        </form>
-        <!-- form end -->
-        <!-- task list -->
-        <ul id="task-list">
-            <li class="task">
-                <input type="checkbox" name="task" id="task1" checked>
-                <label class="custom-checkbox"  for="task1"><svg fill="transparent" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></label>
-                <label for="task1" class="task-text">
-                    Task 1
-                </label>
-                <button fill="var(--secondary-color)" class="delete-button"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
-            </li>
-            <li class="task">
-                <input type="checkbox" name="task" id="task2" checked>
-                <label class="custom-checkbox"  for="task1"><svg fill="transparent" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></label>
-                <label for="task2" class="task-text">
-                    Task 2
-                </label>
-                <button fill="var(--secondary-color)" class="delete-button"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
-            </li>
-           
+  <div class="app">
+    <h1>🗓️ My Schedule</h1>
+
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Enter your task..." required />
+      <select id="task-type">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div class="clear-buttons">
+      <button id="clear-daily">Clear Daily</button>
+      <button id="clear-weekly">Clear Weekly</button>
     </div>
-    
+
+    <div class="tasks">
+      <h2>Daily Tasks</h2>
+      <ul id="daily-tasks"></ul>
+
+      <h2>Weekly Tasks</h2>
+      <ul id="weekly-tasks"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
