@@ -8,7 +8,7 @@ const clearWeekly = document.getElementById("clear-weekly");
 
 let tasks = {
   daily: [],
-  weekly: []
+  weekly: [],
 };
 
 // Load from localStorage on page load
@@ -31,8 +31,7 @@ taskForm.addEventListener("submit", (e) => {
   }
 });
 
-function renderTasks(e) {
-    e.preventDefault();
+function renderTasks() {
   dailyTasksList.innerHTML = "";
   weeklyTasksList.innerHTML = "";
 
@@ -44,9 +43,7 @@ function renderTasks(e) {
   );
 }
 
-function createTaskItem(e,task, type, index) {
-    e.preventDefault();
-    
+function createTaskItem(e, task, type, index) {
   const li = document.createElement("li");
   if (task.completed) li.classList.add("completed");
 
@@ -80,8 +77,7 @@ function createTaskItem(e,task, type, index) {
   return li;
 }
 
-function saveTasks(e) {
-    e.preventDefault();
+function saveTasks() {
   localStorage.setItem("scheduleTasks", JSON.stringify(tasks));
 }
 
