@@ -10,6 +10,14 @@ let tasks = {
   daily: [],
   weekly: [],
 };
+function render() {
+  // Retrieve tasks from localStorage
+  const tasks = JSON.parse(localStorage.getItem("scheduleTasks")) || [];
+}
+
+function saveTasks() {
+  localStorage.setItem("scheduleTasks", JSON.stringify(tasks));
+}
 
 // Load from localStorage on page load
 window.addEventListener("DOMContentLoaded", () => {
